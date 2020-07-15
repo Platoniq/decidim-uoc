@@ -120,6 +120,7 @@ GEM
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
     childprocess (3.0.0)
+    chronic (0.10.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (5.0.0)
@@ -135,6 +136,7 @@ GEM
     crass (1.0.5)
     css_parser (1.7.1)
       addressable
+    daemons (1.3.1)
     date_validator (0.9.0)
       activemodel
       activesupport
@@ -337,6 +339,16 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
+    delayed_job (4.1.8)
+      activesupport (>= 3.0, < 6.1)
+    delayed_job_active_record (4.1.4)
+      activerecord (>= 3.0, < 6.1)
+      delayed_job (>= 3.0, < 5)
+    delayed_job_web (1.4.3)
+      activerecord (> 3.0.0)
+      delayed_job (> 2.0.3)
+      rack-protection (>= 1.5.5)
+      sinatra (>= 1.4.4)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.7.2)
@@ -385,6 +397,8 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     file_validators (2.3.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
@@ -495,6 +509,8 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     mustache (1.1.1)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
@@ -538,6 +554,9 @@ GEM
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
+    passenger (6.0.6)
+      rack
+      rake (>= 0.8.1)
     pg (1.1.4)
     pg_search (2.3.2)
       activerecord (>= 5.2)
@@ -557,6 +576,8 @@ GEM
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
+    rack-protection (2.0.8.1)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -662,8 +683,10 @@ GEM
       rubocop (>= 0.70.0)
     rubocop-rspec (1.41.0)
       rubocop (>= 0.68.1)
+    ruby-ntlm (0.0.4)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
+    ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
     safe_yaml (1.0.5)
@@ -682,6 +705,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sentry-raven (3.0.0)
+      faraday (>= 1.0)
     seven_zip_ruby (1.2.5)
     simplecov (0.18.5)
       docile (~> 1.1)
@@ -689,6 +714,11 @@ GEM
     simplecov-cobertura (1.3.1)
       simplecov (~> 0.8)
     simplecov-html (0.12.2)
+    sinatra (2.0.8.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.8.1)
+      tilt (~> 2.0)
     smart_properties (1.15.0)
     social-share-button (1.2.3)
       coffee-rails
@@ -755,6 +785,8 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     wisper (2.0.1)
     wisper-rspec (1.1.0)
     xpath (3.2.0)
@@ -771,16 +803,25 @@ DEPENDENCIES
   capistrano-passenger (>= 0.1.1)
   capistrano-rails
   capistrano-rbenv
+  daemons (~> 1.3)
   decidim (= 0.21.0)
   decidim-dev (= 0.21.0)
+  delayed_job_active_record (~> 4.1)
+  delayed_job_web
   faker (~> 1.9)
+  figaro (~> 1.2)
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
+  passenger (~> 6.0)
   puma (~> 4.3.3)
+  rspec
+  ruby-ntlm
+  sentry-raven
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
   uglifier (~> 4.1)
   web-console (~> 3.5)
+  whenever
 
 RUBY VERSION
    ruby 2.6.6p146
