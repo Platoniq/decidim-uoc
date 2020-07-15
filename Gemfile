@@ -27,4 +27,10 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
+
+  gem "capistrano"
+  gem "capistrano-rbenv"
+  gem "capistrano-bundler"
+  gem "capistrano-passenger", ">= 0.1.1"
+  gem "capistrano-rails"
 end
