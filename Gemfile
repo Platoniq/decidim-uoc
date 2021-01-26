@@ -4,8 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-# DECIDIM_VERSION = "0.21.0"
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.21-stable" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.23-stable" }
 
 gem "decidim", DECIDIM_VERSION
 # gem "decidim-consultations", DECIDIM_VERSION
@@ -18,7 +17,8 @@ gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
 gem "delayed_job_web"
-gem "sentry-raven"
+gem "sentry-rails"
+gem "sentry-ruby"
 gem "rspec"
 
 group :development, :test do
