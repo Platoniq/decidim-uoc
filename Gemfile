@@ -33,18 +33,19 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
-
-  gem "capistrano"
-  gem "capistrano-rbenv"
-  gem "capistrano-bundler"
-  gem "capistrano-passenger", ">= 0.1.1"
-  gem "capistrano-rails"
+  gem "capistrano", "~> 3.15"
+  gem "capistrano-bundler", "~> 2.0", require: false
+  gem "capistrano-figaro-yml", "~> 1.0.2", require: false
+  gem "capistrano-passenger", "~> 0.2.0", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
+  gem "capistrano-rails-console", require: false
+  gem "capistrano-rbenv", "~> 2.2", require: false
+  gem "passenger", "~> 6.0"
 end
 
 group :production do
   gem "whenever", require: false
   gem "figaro", "~> 1.2"
-  gem "passenger", "~> 6.0"
   gem "delayed_job_active_record", "~> 4.1"
   gem "daemons", "~> 1.3"
 end
