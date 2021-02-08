@@ -1,0 +1,14 @@
+.workshop_{
+  &_title{
+    display: inline;
+
+    & + p{
+      margin-top: 2rem;
+    }
+  }
+
+  &_organization-logo{
+    filter: brightness(50%);
+    margin: 1rem 0;
+  }
+}

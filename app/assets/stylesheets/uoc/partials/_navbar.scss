@@ -1,0 +1,101 @@
+@import "variables";
+@import "foundation";
+
+$navbar-gap: 0.9375rem;
+
+.title-bar {
+  background-color: white;
+  padding: $navbar-gap 0rem $navbar-gap * 1.2;
+}
+
+.navbar {
+  background-color: $navbar-bg;
+  font-family: "UOC Serif", Georgia, "Times New Roman", Times, serif;
+  box-shadow: inset 0 $border-width 0 0 $gray-mid;
+
+  .main-nav {
+    background-color: $navbar-bg;
+
+    &__link {
+      box-shadow: inset 0 $border-width 0 0 $gray-light;
+      margin: 0 $navbar-gap;
+      text-align: left;
+
+      &:first-child {
+        margin-left: $navbar-gap * 2;
+      }
+      &:last-child {
+        margin-right: $navbar-gap * 2;
+      }
+
+      a {
+        color: $navbar-fg;
+      }
+
+      &--active a {
+        color: $navbar-fg;
+        box-shadow: inset 0 $border-width 0 0 $primary;
+      }
+    }
+  }
+}
+
+.dropdown.menu {
+  .is-dropdown-submenu-parent.is-active {
+    & > a:first-child {
+      color: $primary;
+    }
+  }
+}
+
+.topbar {
+  background-color: $title-bar-bg;
+  max-width: none;
+
+  &__search {
+    input,
+    input:focus {
+      color: $body-font-color;
+      background-color: $white;
+    }
+
+    input,
+    button,
+    .input-group-button {
+      border-radius: 0;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: $navbar-fg;
+    }
+
+    &:not(:focus-within) .button {
+      background-color: $primary-light;
+      color: $body-font-color;
+    }
+  }
+
+  &__dropmenu {
+    a {
+      text-decoration: none;
+    }
+
+    .icon {
+      opacity: 0.5;
+    }
+  }
+
+  &__user {
+    a:hover {
+      color: $primary;
+    }
+  }
+}
+
+.subhero-cta {
+  color: $body-font-color;
+  &:hover {
+    color: $body-font-color;
+  }
+}

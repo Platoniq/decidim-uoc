@@ -1,0 +1,122 @@
+@import "variables";
+
+@font-face {
+  font-family: "UOC Sans";
+  src: font-url("uoc/UOCSans-Regular.woff2") format("woff2"), font-url("uoc/UOCSans-Regular.woff") format("woff"),
+    font-url("uoc/UOCSans-Regular.otf") format("truetype");
+  font-display: auto;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "UOC Sans";
+  src: font-url("uoc/UOCSans-Italic.woff2") format("woff2"), font-url("uoc/UOCSans-Italic.woff") format("woff"),
+    font-url("uoc/UOCSans-Italic.otf") format("truetype");
+  font-display: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "UOC Sans";
+  src: font-url("uoc/UOCSans-Bold.woff2") format("woff2"), font-url("uoc/UOCSans-Bold.woff") format("woff"),
+    font-url("uoc/UOCSans-Bold.otf") format("truetype");
+  font-display: auto;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "UOC Serif";
+  src: font-url("uoc/UOCSerif-Regular.woff2") format("woff2"), font-url("uoc/UOCSerif-Regular.woff") format("woff"),
+    font-url("uoc/UOCSerif-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "UOC Sans", Arial, Helvetica, sans-serif;
+  background-color: $body-background-color;
+  color: $body-font-color;
+}
+
+.off-canvas {
+  background-color: $body-background-color;
+
+  &-wrapper {
+    background-color: $body-background-color;
+  }
+
+  .close-button {
+    color: $body-font-color;
+  }
+  .usermenu-off-canvas a {
+    color: white;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "UOC Serif", Georgia, "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+}
+
+.section-heading {
+  font-family: "UOC Sans", Helvetica, sans-serif;
+  font-style: normal;
+}
+
+a,
+.link,
+.card__link,
+.author-data .author__name,
+.card__icondata ul li:first-child,
+.card__block ul li:first-child,
+.topbar__dropmenu .is-dropdown-submenu li a,
+.process-nav__link {
+  color: $link-color;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+  }
+
+  &.disabled {
+    color: inherit;
+    text-decoration: none;
+    cursor: inherit;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+  }
+}
+
+label,
+.home-pam__title {
+  color: $body-font-color;
+}
+
+.section-heading::before,
+.pagination .current {
+  background-color: $primary;
+}
+
+.card--list__item {
+  .card--list__icon.alert {
+    fill: $primary;
+  }
+}

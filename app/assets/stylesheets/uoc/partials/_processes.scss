@@ -1,0 +1,56 @@
+@import "variables";
+
+.process-nav_ {
+  &_hidden-content__more,
+  &_more {
+    color: $link-color;
+    i {
+      background-color: $primary;
+    }
+  }
+  &_content {
+    li.is-active {
+      box-shadow: inset 0 4px 0 0 $primary;
+    }
+  }
+  &_link {
+    font-family: "UOC Serif";
+    text-transform: none;
+    font-weight: normal;
+  }
+}
+
+.process-header_ {
+  &_hashtag {
+    color: $primary;
+    text-decoration: none;
+
+    a {
+      color: $primary;
+    }
+    &::after {
+      content: none;
+    }
+  }
+  &_progress {
+    .phase-item--past {
+      span {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.timeline_ {
+  &_item--current {
+    .timeline_ {
+      &_header,
+      &_date {
+        color: $body-font-color;
+      }
+      &_phase {
+        background: $body-font-color;
+      }
+    }
+  }
+}
