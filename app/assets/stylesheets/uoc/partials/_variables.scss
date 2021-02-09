@@ -1,5 +1,6 @@
 // Variables
 $uoc-primary: #000078;
+$uoc-text: rgb(0, 0, 120);
 $uoc-masterbrand: #73edff;
 $gray-light: #f0f0f0;
 $gray-mid: #d0d0d0;
@@ -7,14 +8,14 @@ $gray-dark: #878787;
 
 $primary: $uoc-masterbrand;
 $primary-rgb: 115, 237, 255;
-$secondary: $gray-dark;
-$secondary-rgb: 208, 208, 208;
+$secondary: $uoc-primary;
+$secondary-rgb: 0, 0, 120;
 $success: #c2ffde;
-$success-rgb: 87, 214, 133; // #!
-$warning: #fff5b2; // #!
-$warning-rgb: 255, 174, 0;
-$alert: #ffd9db; // #!
-$alert-rgb: 236, 88, 64;
+$success-rgb: 194, 255, 222;
+$warning: #fff5b2;
+$warning-rgb: 255, 245, 178;
+$alert: #ffd9db;
+$alert-rgb: 255, 217, 219;
 
 $primary-light: #d6faff;
 
@@ -32,7 +33,7 @@ $body-background-color: white;
 $navbar-color: $uoc-masterbrand;
 $title-bar-color: $body-font-color;
 
-$title-bar-bg: $body-font-color;
+$title-bar-bg: $uoc-masterbrand;
 $navbar-bg: $body-background-color;
 $navbar-fg: $body-font-color;
 $navbar-fg-hover: $body-font-color;
@@ -59,4 +60,14 @@ $color-removal: #ffeef0;
   --twitter: #{$twitter};
   --facebook: #{$facebook};
   --google: #{$google};
+}
+
+$unit: 0.9375rem;
+
+@mixin top-border($color) {
+  box-shadow: inset 0 $border-width 0 0 $color;
+}
+
+@mixin top-bottom-border($color) {
+  box-shadow: inset 0 $border-width 0 0 $color, inset 0 (-$border-width) 0 0 $color;
 }

@@ -1,40 +1,52 @@
 @import "variables";
 @import "foundation";
 
-$navbar-gap: 0.9375rem;
-
 .title-bar {
   background-color: white;
-  padding: $navbar-gap 0rem $navbar-gap * 1.2;
+  padding: 0;
+  padding-bottom: $unit * 1.2;
 }
 
 .navbar {
   background-color: $navbar-bg;
   font-family: "UOC Serif", Georgia, "Times New Roman", Times, serif;
-  box-shadow: inset 0 $border-width 0 0 $gray-mid;
+  margin-bottom: $unit;
+
+  & > .row {
+    padding: 0;
+  }
 
   .main-nav {
     background-color: $navbar-bg;
 
     &__link {
-      box-shadow: inset 0 $border-width 0 0 $gray-light;
-      margin: 0 $navbar-gap;
+      @include top-bottom-border($gray-mid);
+      margin: 0 $unit;
       text-align: left;
 
       &:first-child {
-        margin-left: $navbar-gap * 2;
+        margin-left: 0;
       }
       &:last-child {
-        margin-right: $navbar-gap * 2;
+        margin-right: 0;
       }
 
       a {
         color: $navbar-fg;
+        font-family: "Uoc Sans";
+        text-decoration: none;
+        height: $unit * 3;
+        padding: 0;
+
+        &:hover {
+          @include top-bottom-border($body-font-color);
+          text-decoration: none;
+        }
       }
 
       &--active a {
         color: $navbar-fg;
-        box-shadow: inset 0 $border-width 0 0 $primary;
+        @include top-bottom-border($body-font-color);
       }
     }
   }
@@ -49,8 +61,8 @@ $navbar-gap: 0.9375rem;
 }
 
 .topbar {
-  background-color: $title-bar-bg;
   max-width: none;
+  padding: 3rem;
 
   &__search {
     input,
@@ -87,8 +99,14 @@ $navbar-gap: 0.9375rem;
   }
 
   &__user {
-    a:hover {
-      color: $primary;
+    &__login a {
+      color: $body-font-color;
+    }
+  }
+
+  &__menu {
+    button svg {
+      fill: $body-font-color;
     }
   }
 }
