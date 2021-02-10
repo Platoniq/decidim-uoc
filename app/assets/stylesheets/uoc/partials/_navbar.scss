@@ -70,24 +70,18 @@
     }
   }
 
+  &__user__login,
+  &__admin__link,
+  &__menu,
   &__dropmenu {
     a {
+      color: $link-color;
       text-decoration: none;
     }
-
     .icon {
       opacity: 0.5;
     }
-  }
-
-  &__user {
-    &__login a {
-      color: $link-color;
-    }
-  }
-
-  &__menu {
-    button svg {
+    svg {
       fill: $link-color;
     }
   }
