@@ -17,12 +17,14 @@
 
   .main-nav {
     @include menu;
+
     &__link {
       @include menu-item-li;
 
       a {
         @include menu-item-a;
         height: $unit * 3;
+        padding-top: 0.6rem;
       }
 
       &--active a {
