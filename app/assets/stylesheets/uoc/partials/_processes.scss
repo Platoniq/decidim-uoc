@@ -69,3 +69,12 @@
     }
   }
 }
+
+.process-stats {
+  &__title {
+    @include font-sans;
+  }
+  &__data::after {
+    border-left: 2px solid $primary;
+  }
+}

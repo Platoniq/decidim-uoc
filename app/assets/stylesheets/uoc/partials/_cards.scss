@@ -1,0 +1,9 @@
+@import "./variables";
+
+.card {
+  border-radius: 0;
+
+  .card__text--status {
+    background-color: $gray-dark;
+  }
+}
