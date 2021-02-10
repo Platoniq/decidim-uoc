@@ -1,9 +1,0 @@
-#content{
-  .wrapper{
-    & > .row:last-child{
-      .card__footer{
-        display: none;
-      }
-    }
-  }
-}

@@ -1,15 +1,14 @@
-@import "variables";
-@import "foundation";
+@import "./variables";
 
 .title-bar {
-  background-color: white;
+  background-color: $title-bar-bg;
   padding: 0;
-  padding-bottom: $unit * 1.2;
 }
 
 .navbar {
+  @include font-serif;
+
   background-color: $navbar-bg;
-  font-family: "UOC Serif", Georgia, "Times New Roman", Times, serif;
   margin-bottom: $unit;
 
   & > .row {
@@ -17,31 +16,13 @@
   }
 
   .main-nav {
-    background-color: $navbar-bg;
-
+    @include menu;
     &__link {
-      @include top-bottom-border($gray-mid);
-      margin: 0 $unit;
-      text-align: left;
-
-      &:first-child {
-        margin-left: 0;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
+      @include menu-item-li;
 
       a {
-        color: $navbar-fg;
-        font-family: "Uoc Sans";
-        text-decoration: none;
+        @include menu-item-a;
         height: $unit * 3;
-        padding: 0;
-
-        &:hover {
-          @include top-bottom-border($link-color);
-          text-decoration: none;
-        }
       }
 
       &--active a {
@@ -69,7 +50,7 @@
     input,
     input:focus {
       color: $body-font-color;
-      background-color: $white;
+      background-color: $title-bar-bg;
     }
 
     input,
@@ -84,8 +65,8 @@
     }
 
     &:not(:focus-within) .button {
-      background-color: $primary-light;
-      color: $body-font-color;
+      background-color: $link-color;
+      color: $title-bar-bg;
     }
   }
 

@@ -2,6 +2,7 @@
 $uoc-primary: #000078;
 $uoc-text: rgb(0, 0, 120);
 $uoc-masterbrand: #73edff;
+$white: white;
 $gray-light: #f0f0f0;
 $gray-mid: #d0d0d0;
 $gray-dark: #878787;
@@ -29,11 +30,11 @@ $border-width: 4px;
 $border: $border-width solid $border-color;
 
 $body-font-color: $uoc-primary;
-$body-background-color: white;
+$body-background-color: $white;
 $navbar-color: $uoc-masterbrand;
 $title-bar-color: $body-font-color;
 
-$title-bar-bg: $uoc-masterbrand;
+$title-bar-bg: $body-background-color;
 $navbar-bg: $body-background-color;
 $navbar-fg: $body-font-color;
 $navbar-fg-hover: $body-font-color;
@@ -64,10 +65,5 @@ $color-removal: #ffeef0;
 
 $unit: 0.9375rem;
 
-@mixin top-border($color) {
-  box-shadow: inset 0 $border-width 0 0 $color;
-}
-
-@mixin top-bottom-border($color) {
-  box-shadow: inset 0 $border-width 0 0 $color, inset 0 (-$border-width) 0 0 $color;
-}
+@import "./fonts";
+@import "./mixins";

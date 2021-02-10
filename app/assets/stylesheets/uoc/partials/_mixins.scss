@@ -1,0 +1,50 @@
+@mixin top-border($color) {
+  box-shadow: inset 0 $border-width 0 0 $color;
+}
+
+@mixin top-bottom-border($color) {
+  box-shadow: inset 0 $border-width 0 0 $color, inset 0 (-$border-width) 0 0 $color;
+}
+
+@mixin menu() {
+  background-color: $white;
+  padding: ($unit * 1.2) 0;
+  box-shadow: none;
+}
+
+@mixin menu-item-li() {
+  @include top-bottom-border($gray-mid);
+
+  &.is-active,
+  &.active,
+  &:hover {
+    box-shadow: none;
+    @include top-bottom-border($link-color);
+  }
+
+  padding: 0;
+  margin: 0 $unit;
+  min-width: 8rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin menu-item-a() {
+  @include font-button;
+
+  color: $link-color;
+  text-align: left;
+  padding: 0;
+
+  &:hover {
+    color: $link-color;
+    @include font-button;
+  }
+
+  height: $unit * 3;
+}

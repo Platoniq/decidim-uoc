@@ -1,40 +1,7 @@
 @import "variables";
 
-@font-face {
-  font-family: "UOC Sans";
-  src: font-url("uoc/UOCSans-Regular.woff2") format("woff2"), font-url("uoc/UOCSans-Regular.woff") format("woff"),
-    font-url("uoc/UOCSans-Regular.otf") format("truetype");
-  font-display: auto;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "UOC Sans";
-  src: font-url("uoc/UOCSans-Italic.woff2") format("woff2"), font-url("uoc/UOCSans-Italic.woff") format("woff"),
-    font-url("uoc/UOCSans-Italic.otf") format("truetype");
-  font-display: auto;
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "UOC Sans";
-  src: font-url("uoc/UOCSans-Bold.woff2") format("woff2"), font-url("uoc/UOCSans-Bold.woff") format("woff"),
-    font-url("uoc/UOCSans-Bold.otf") format("truetype");
-  font-display: auto;
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "UOC Serif";
-  src: font-url("uoc/UOCSerif-Regular.woff2") format("woff2"), font-url("uoc/UOCSerif-Regular.woff") format("woff"),
-    font-url("uoc/UOCSerif-Regular.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  font-family: "UOC Sans", Arial, Helvetica, sans-serif;
+  @include font-sans;
   background-color: $body-background-color;
   color: $body-font-color;
 }
@@ -66,15 +33,12 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "UOC Serif", Georgia, "Times New Roman", Times, serif;
-  font-style: normal;
-  font-weight: normal;
+  @include font-heading-serif;
   color: inherit;
 }
 
 .section-heading {
-  font-family: "UOC Sans", Helvetica, sans-serif;
-  font-style: normal;
+  @include font-heading-sans;
 }
 
 a,
