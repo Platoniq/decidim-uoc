@@ -39,23 +39,24 @@
         padding: 0;
 
         &:hover {
-          @include top-bottom-border($body-font-color);
+          @include top-bottom-border($link-color);
           text-decoration: none;
         }
       }
 
       &--active a {
         color: $navbar-fg;
-        @include top-bottom-border($body-font-color);
+        @include top-bottom-border($link-color);
       }
     }
   }
 }
 
 .dropdown.menu {
+  .is-dropdown-submenu-parent,
   .is-dropdown-submenu-parent.is-active {
-    & > a:first-child {
-      color: $primary;
+    a {
+      color: $link-color;
     }
   }
 }
@@ -100,13 +101,13 @@
 
   &__user {
     &__login a {
-      color: $body-font-color;
+      color: $link-color;
     }
   }
 
   &__menu {
     button svg {
-      fill: $body-font-color;
+      fill: $link-color;
     }
   }
 }
