@@ -1,0 +1,22 @@
+@import "variables";
+
+#profile-tabs.tabs {
+  .tabs-title,
+  .tabs-title.is-active {
+    a {
+      color: $link-color;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  .tabs-title.is-active {
+    a {
+      border-bottom-color: $primary;
+    }
+  }
+}
