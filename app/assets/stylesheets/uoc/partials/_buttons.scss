@@ -4,6 +4,15 @@
   background-color: $body-font-color;
   color: $gray-light;
   border-radius: 0px;
+
+  &.hollow {
+    color: $body-font-color;
+
+    &:hover,
+    &:focus {
+      color: $body-font-color;
+    }
+  }
 }
 
 // User account page
@@ -13,10 +22,13 @@
 
 #user-settings-tabs {
   .tabs-title {
+    @include font-link;
     color: $link-color;
+
     &:hover > a {
       color: $link-color;
     }
+
     &.is-active > a {
       color: $link-color;
       box-shadow: inset 4px 0 0 $primary;

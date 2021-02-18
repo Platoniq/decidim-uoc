@@ -63,6 +63,26 @@ $color-removal: #ffeef0;
   --google: #{$google};
 }
 
+.callout.primary {
+  background-color: lighten($primary-light, 5%);
+}
+
+.callout.secondary {
+  background-color: $primary-light;
+}
+
+.callout.success {
+  background-color: lighten($success, 5%);
+}
+
+.callout.warning {
+  background-color: lighten($warning, 5%);
+}
+
+.callout.alert {
+  background-color: lighten($alert, 5%);
+}
+
 $unit: 0.9375rem;
 
 @import "./fonts";

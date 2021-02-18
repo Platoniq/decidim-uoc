@@ -51,7 +51,7 @@
     input,
     input:focus {
       color: $body-font-color;
-      background-color: $title-bar-bg;
+      background-color: $gray-light;
     }
 
     input,
@@ -74,16 +74,27 @@
   &__user__login,
   &__admin__link,
   &__menu,
-  &__dropmenu {
+  &__dropmenu,
+  &__notifications,
+  &__conversations {
     a {
       color: $link-color;
       text-decoration: none;
+
+      &:hover {
+        color: $link-color;
+        text-decoration: underline;
+      }
     }
-    .icon {
-      opacity: 0.5;
-    }
+
+    .icon,
     svg {
+      opacity: 0.5;
       fill: $link-color;
+    }
+
+    & > ul > li > a::after {
+      border-top-color: transparentize($body-font-color, 0.5) !important;
     }
   }
 }
