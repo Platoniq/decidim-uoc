@@ -60,7 +60,7 @@ namespace :platoniq do
     puts "Sending a test email to #{args.email}"
 
     if ENV["SMTP_SETTINGS"].present?
-      settings = eval ENV["SMTP_SETTINGS"]
+      settings = safe_eval ENV["SMTP_SETTINGS"]
       ActionMailer::Base.smtp_settings = settings
       puts "Using custom settings!"
     end
