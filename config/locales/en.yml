@@ -1,3 +1,8 @@
 ---
 en:
-  hello: Hello world
+  decidim:
+    menu:
+      assemblies: Management
+  uoc:
+    alternative_assembly_types:
+      work_groups: Work groups
