@@ -9,10 +9,11 @@ describe "Visit the home page", type: :system, perform_enqueued: true do
 
   before do
     switch_to_host(organization.host)
-    visit decidim.root_path
   end
 
   it "renders the home page" do
+    visit decidim.root_path
+
     within ".main-nav" do
       expect(page).to have_content("Home")
       expect(page).not_to have_content("Management")
