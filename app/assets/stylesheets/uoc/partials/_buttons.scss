@@ -5,13 +5,12 @@
   color: $gray-light;
   border-radius: 0px;
 
-  &.hollow {
+  &:hover,
+  &:focus,
+  &.hollow,
+  &.hollow:hover,
+  &.hollow:focus {
     color: $body-font-color;
-
-    &:hover,
-    &:focus {
-      color: $body-font-color;
-    }
   }
 }
 
