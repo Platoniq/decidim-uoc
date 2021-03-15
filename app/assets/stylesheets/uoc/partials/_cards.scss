@@ -4,6 +4,8 @@
   border-radius: 0;
 
   .card__text--status {
-    background-color: $gray-dark;
+    background-color: $body-font-color;
+    padding: 3px;
+    margin-right: 5px;
   }
 }
