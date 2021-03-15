@@ -31,8 +31,7 @@ checksums = [
       "/lib/decidim/assemblies/admin_engine.rb" => "15bfba31a46f70870da42a07b588e59d",
       "/app/models/decidim/assembly.rb" => "b99256774db6151d5b0e47cacdbea550",
       "/app/views/decidim/assemblies/_filter_by_type.html.erb" => "76988d76b84d96079e6d9e1b252a3fda",
-      "/app/views/decidim/assemblies/assemblies/_parent_assemblies.html.erb" => "fd026d4ee40dd1d5ebf8ad9ec5d0dbb4",
-      "/app/cells/decidim/assemblies/assembly_m_cell.rb" => "40b5a636a80b1da88bceb459d286f690"
+      "/app/views/decidim/assemblies/assemblies/_parent_assemblies.html.erb" => "fd026d4ee40dd1d5ebf8ad9ec5d0dbb4"
     }
   }
 ]
