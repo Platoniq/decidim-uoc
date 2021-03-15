@@ -12,7 +12,9 @@
   margin-bottom: $unit;
 
   & > .row {
-    padding: 0;
+    @media print, screen and (min-width: 80rem) {
+      padding: 0;
+    }
   }
 
   .main-nav {

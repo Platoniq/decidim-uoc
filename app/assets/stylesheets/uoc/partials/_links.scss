@@ -1,0 +1,81 @@
+@import "./variables";
+
+/* fix colors variables */
+.button.hollow.secondary:hover,
+.button.hollow.secondary:focus {
+  color: $body-font-color;
+}
+.floating-helper__text {
+  color: $secondary;
+}
+.floating-helper__icon {
+  background-color: $secondary;
+}
+.global-accountability .row.column .card--accountability .card__content ul a,
+.global-accountability .row.columns .card--accountability .card__content ul a,
+.global-accountability .row.column .card--accountability .badge-card__content ul a,
+.global-accountability .row.columns .card--accountability .badge-card__content ul a {
+  color: $secondary;
+}
+.topbar__dropmenu .is-dropdown-submenu li a {
+  color: $secondary;
+}
+.svg-icon-path {
+  color: $primary !important ;
+}
+html a {
+  color: $secondary;
+}
+.card__link {
+  color: $secondary;
+}
+.author-data .author__name {
+  color: $secondary;
+}
+.process_stats .process_stats-item .icon {
+  color: $secondary;
+}
+#profile-tabs.tabs .tabs-title a {
+  color: $secondary;
+}
+.floating-helper__icon-big {
+  color: $secondary;
+}
+.link {
+  color: $secondary;
+}
+.side-panel__tabs .tabs-title.is-active > [role="tab"],
+.side-panel__tabs .tabs-title.is-active > a {
+  color: $secondary;
+}
+.side-panel__tabs .tabs-title > [role="tab"]:hover,
+.side-panel__tabs .tabs-title > a:hover {
+  color: $secondary;
+}
+.opinion-toggle--meh:hover {
+  background-color: $secondary;
+}
+.opinion-toggle--meh:focus {
+  background-color: $secondary;
+}
+.opinion-toggle--meh.is-active {
+  background-color: $secondary;
+}
+.floating-helper__content-close {
+  background-color: $secondary;
+}
+.button.secondary {
+  background-color: $secondary;
+}
+.floating-helper__content {
+  border-top: 5px solid $secondary;
+}
+.pagination .current {
+  background: $secondary;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: $secondary transparent transparent;
+}
+.dropdown.menu .is-active > a {
+  color: $secondary;
+}
