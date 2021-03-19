@@ -32,6 +32,10 @@
       &--active a {
         color: $navbar-fg;
         @include top-bottom-border($link-color);
+
+        @include small-screen {
+          @include top-border($link-color);
+        }
       }
     }
   }
@@ -73,6 +77,10 @@
     }
   }
 
+  &__admin__link {
+    margin-right: $unit;
+  }
+
   &__user__login,
   &__admin__link,
   &__menu,
@@ -111,5 +119,28 @@
 .logo-wrapper {
   img {
     max-height: 60px;
+  }
+}
+
+#language-chooser-control {
+  color: $body-font-color;
+
+  @include small-screen {
+    color: $white;
+  }
+}
+
+.off-canvas .usermenu-off-canvas a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+.off-canvas-wrapper-inner {
+  .position-right {
+    box-shadow: none;
+    border-left: 1px solid $body-font-color;
   }
 }
