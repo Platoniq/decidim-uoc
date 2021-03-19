@@ -3,10 +3,17 @@
 .process-nav {
   @include menu;
 
+  & > .row {
+    @media print, screen and (max-width: 80rem) {
+      padding: $unit;
+    }
+  }
+
   &__more {
     @include menu-item-a;
     padding: 1rem;
     min-width: 8rem;
+
     color: $body-background-color;
 
     text-align: center;
@@ -28,7 +35,7 @@
     }
   }
 
-  .process-nav__hidden-content {
+  &__hidden-content {
     li {
       @include top-border($gray-mid);
     }

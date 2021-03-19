@@ -17,15 +17,28 @@
 @mixin menu-item-li {
   @include top-bottom-border($gray-mid);
 
+  @include small-screen {
+    @include top-border($gray-mid);
+  }
+
   &.is-active,
   &.active,
   &:hover {
     @include top-bottom-border($link-color);
+
+    @include small-screen {
+      @include top-border($link-color);
+    }
   }
 
   padding: 0;
-  margin: 0 $unit;
-  min-width: 8rem;
+  margin: 0 $unit / 2;
+  min-width: 6rem;
+
+  @include big-screen {
+    margin: 0 $unit;
+    min-width: 8rem;
+  }
 
   &:first-child {
     margin-left: 0;
@@ -48,4 +61,22 @@
   }
 
   height: $unit * 3;
+}
+
+@mixin small-screen {
+  @media print, screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin mid-screen {
+  @media print, screen and (min-width: 40em) and (max-width: 64em) {
+    @content;
+  }
+}
+
+@mixin big-screen {
+  @media print, screen and (min-width: 64em) {
+    @content;
+  }
 }
