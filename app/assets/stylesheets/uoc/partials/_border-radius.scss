@@ -5,6 +5,8 @@ input,
 button,
 .input-group-button,
 select,
-.inline-filters button[data-toggle] {
+.inline-filters button[data-toggle],
+.input-group > :last-child,
+.input-group > :last-child.input-group-button > * {
   border-radius: 0;
 }
