@@ -29,9 +29,8 @@ module Decidim
       def resource_image_path
         custom_path = "uoc/assemblies/#{model.id}_#{I18n.locale}.jpg"
 
-        if Rails.env.production?
-          return custom_path if Rails.application.assets_manifest.find_sources(custom_path).present?
-        elsif Rails.application.assets.find_asset(custom_path).present?
+
+        if File.exist? Rails.root.join("app/assets/images/#{custom_path}")
           return custom_path
         end
 
