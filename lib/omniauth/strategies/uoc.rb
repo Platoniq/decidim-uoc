@@ -8,7 +8,7 @@ module OmniAuth
     class Uoc < OmniAuth::Strategies::OAuth2
       args [:client_id, :client_secret, :site]
 
-      option :name, :decidim
+      option :name, :uoc
       option :site, nil
       option :client_options, {}
 
