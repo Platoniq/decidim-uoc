@@ -27,13 +27,13 @@ module OmniAuth
 
       def client
         options.client_options[:site] = options.site
-        options.client_options[:authorize_url] = URI.join(options.site, "/oauth/authorize").to_s
-        options.client_options[:token_url] = URI.join(options.site, "/oauth/token").to_s
+        options.client_options[:authorize_url] = URI.join(options.site, "/oauth2/auth").to_s
+        options.client_options[:token_url] = URI.join(options.site, "/oauth2/token").to_s
         super
       end
 
       def raw_info
-        @raw_info ||= access_token.get("/oauth/me").parsed
+        @raw_info ||= access_token.get("/oauth2/userinfo").parsed
       end
 
       # https://github.com/intridea/omniauth-oauth2/issues/81
