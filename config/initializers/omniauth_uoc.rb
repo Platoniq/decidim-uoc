@@ -14,7 +14,7 @@ if Rails.application.secrets.dig(:omniauth, :uoc).present?
                env["omniauth.strategy"].options[:client_secret] = provider_config[:client_secret]
                env["omniauth.strategy"].options[:site] = provider_config[:site_url]
              },
-      scope: "openid local2"
+      scope: "decidim.rw"
     )
   end
 end
