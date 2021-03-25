@@ -1,0 +1,87 @@
+@import "variables";
+
+.process-nav {
+  @include menu;
+
+  & > .row {
+    @media print, screen and (max-width: 80rem) {
+      padding: $unit;
+    }
+  }
+
+  &__more {
+    @include menu-item-a;
+    padding: 1rem;
+    min-width: 8rem;
+
+    color: $body-background-color;
+
+    text-align: center;
+    i {
+      background-color: $primary;
+    }
+  }
+  &__content > ul li {
+    @include menu-item-li;
+  }
+  &__link {
+    @include menu-item-a;
+  }
+
+  &__hidden-content__more {
+    color: $link-color;
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  &__hidden-content {
+    li {
+      @include top-border($gray-mid);
+    }
+  }
+}
+
+.process-header {
+  &__hashtag {
+    color: $primary;
+    text-decoration: none;
+
+    a {
+      color: $primary;
+    }
+    &::after {
+      content: none;
+    }
+  }
+  &__progress {
+    .phase-item--past {
+      span {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.timeline {
+  &__item--current {
+    .timeline {
+      &__header,
+      &__date {
+        color: $body-font-color;
+      }
+      &__phase {
+        background: $body-font-color;
+      }
+    }
+  }
+}
+
+.process-stats {
+  &__title {
+    @include font-sans;
+  }
+  &__data::after {
+    border-left: 2px solid $primary;
+  }
+}

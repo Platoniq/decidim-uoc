@@ -1,0 +1,24 @@
+ca:
+  uoc:
+    account_callout: Alguns d'aquests camps (*) es llegeixen del teu compte UOC, i no es poden editar aquí.
+    account_link: Modifica el teu compte UOC.
+    account_url: https://cv.uoc.edu/webapps/cas/login
+    alternative_login: Entra amb un altre compte
+    alternative_assembly_types:
+      work_groups: Grups de treball
+en:
+  uoc:
+    account_callout: Some of these fields (*) are read from your UOC account, and cannot be edited here.
+    account_link: Modify your UOC account.
+    account_url: https://cv.uoc.edu/webapps/cas/login
+    alternative_login: Enter with another account
+    alternative_assembly_types:
+      work_groups: Work groups
+es:
+  uoc:
+    account_callout: Algunos de estos campos (*) se leen de tu cuenta UOC, y no se pueden editar aquí.
+    account_link: Modifica tu cuenta UOC.
+    account_url: https://cv.uoc.edu/webapps/cas/login
+    alternative_login: Entra con otra cuenta
+    alternative_assembly_types:
+      work_groups: Grupos de trabajo

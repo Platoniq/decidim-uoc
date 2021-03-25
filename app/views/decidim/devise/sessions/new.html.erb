@@ -1,0 +1,5 @@
+<% if uoc_sign_in_enabled? %>
+  <%= render partial: "uoc/sessions/new_custom" %>
+<% else %>
+  <%= render partial: "uoc/sessions/new_default" %>
+<% end %>

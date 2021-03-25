@@ -1,0 +1,45 @@
+@import "variables";
+
+.button {
+  background-color: $body-font-color;
+  color: $gray-light;
+  border-radius: 0px;
+
+  &:hover,
+  &:focus,
+  &.hollow,
+  &.hollow:hover,
+  &.hollow:focus {
+    color: $body-font-color;
+  }
+}
+
+// User account page
+.card--list__icon {
+  fill: $primary;
+}
+
+#user-settings-tabs {
+  .tabs-title {
+    @include font-link;
+    color: $link-color;
+
+    &:hover > a {
+      color: $link-color;
+    }
+
+    &.is-active > a {
+      color: $link-color;
+      box-shadow: inset 4px 0 0 $primary;
+    }
+  }
+}
+
+.unread_message__counter {
+  background-color: $primary;
+}
+
+.author__verified,
+.author__badge svg {
+  color: $primary;
+}

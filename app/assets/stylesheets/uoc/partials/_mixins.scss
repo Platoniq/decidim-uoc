@@ -1,0 +1,82 @@
+@mixin top-border($color) {
+  box-shadow: inset 0 $border-width 0 0 $color;
+  transition: box-shadow 0.25s;
+}
+
+@mixin top-bottom-border($color) {
+  box-shadow: inset 0 $border-width 0 0 $color, inset 0 (-$border-width) 0 0 $color;
+  transition: box-shadow 0.25s;
+}
+
+@mixin menu {
+  background-color: $white;
+  padding: ($unit * 1.2) 0;
+  box-shadow: none;
+}
+
+@mixin menu-item-li {
+  @include top-bottom-border($gray-mid);
+
+  @include small-screen {
+    @include top-border($gray-mid);
+  }
+
+  &.is-active,
+  &.active,
+  &:hover {
+    @include top-bottom-border($link-color);
+
+    @include small-screen {
+      @include top-border($link-color);
+    }
+  }
+
+  padding: 0;
+  margin: 0 $unit / 2;
+  min-width: 6rem;
+
+  @include big-screen {
+    margin: 0 $unit;
+    min-width: 8rem;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin menu-item-a {
+  @include font-button;
+
+  color: $link-color;
+  text-align: left;
+  padding: 0;
+
+  &:hover {
+    color: $link-color;
+    @include font-button;
+  }
+
+  height: $unit * 3;
+}
+
+@mixin small-screen {
+  @media print, screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin mid-screen {
+  @media print, screen and (min-width: 40em) and (max-width: 64em) {
+    @content;
+  }
+}
+
+@mixin big-screen {
+  @media print, screen and (min-width: 64em) {
+    @content;
+  }
+}

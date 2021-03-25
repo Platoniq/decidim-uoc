@@ -1,0 +1,20 @@
+@import "variables";
+
+.main-footer,
+.mini-footer {
+  background-color: $body-background-color;
+  color: $gray-dark;
+  a {
+    color: $gray-dark;
+    &:hover {
+      color: $body-font-color;
+    }
+  }
+  .decidim-logo img {
+    filter: brightness(50%);
+  }
+}
+
+.cc-badge {
+  text-decoration: none;
+}
