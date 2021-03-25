@@ -13,15 +13,16 @@ module OmniAuth
       option :client_options, {}
 
       uid do
-        raw_info["id"]
+        raw_info["sub"]
       end
 
       info do
         {
           email: raw_info["email"],
-          nickname: raw_info["nickname"],
-          name: raw_info["name"],
-          image: raw_info["image"]
+          nickname: raw_info["username"],
+          name: raw_info["displayName"],
+          locale: raw_info["preferredLanguage"],
+          # image: raw_info["image"]
         }
       end
 
@@ -33,7 +34,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get("/oauth2/userinfo").parsed
+        @raw_info ||= access_token.get("/userinfo").parsed
       end
 
       # https://github.com/intridea/omniauth-oauth2/issues/81
