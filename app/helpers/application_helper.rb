@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def uoc?(user)
-    user.identities.find_by(provider: "uoc").present?
+    user.identities.find_by(provider: Omniauth::Strategies::Uoc::PROVIDER_NAME).present?
   end
 
   def uoc_sign_in_enabled?
