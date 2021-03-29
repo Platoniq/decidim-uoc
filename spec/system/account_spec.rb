@@ -35,7 +35,7 @@ describe "Visit the account page", type: :system, perform_enqueued: true do
   end
 
   context "when user has a 'uoc' identity" do
-    let!(:identity) { create(:identity, user: user, provider: "uoc") }
+    let!(:identity) { create(:identity, user: user, provider: OmniAuth::Strategies::Uoc::PROVIDER_NAME) }
 
     before do
       visit decidim.account_path

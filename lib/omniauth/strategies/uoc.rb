@@ -6,6 +6,9 @@ require "open-uri"
 module OmniAuth
   module Strategies
     class Uoc < OmniAuth::Strategies::OAuth2
+      PROVIDER_NAME = "uoc"
+      AFFILIATIONS = %w(staff faculty).freeze
+
       args [:client_id, :client_secret, :site]
 
       option :name, :uoc
@@ -22,7 +25,16 @@ module OmniAuth
           nickname: raw_info["username"],
           name: raw_info["displayName"],
           locale: raw_info["preferredLanguage"],
-          # image: raw_info["image"]
+          avatar_url: "http://cv.uoc.edu/UOC/mc-icons/fotos/#{raw_info["username"]}.jpg"
+        }
+      end
+
+      extra do
+        {
+          employee_number: raw_info["employeeNumber"],
+          locale: raw_info["preferredLanguage"],
+          rat: raw_info["rat"],
+          affiliations: raw_info["eduPersonAffiliation"]
         }
       end
 

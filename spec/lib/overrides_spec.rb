@@ -20,7 +20,11 @@ checksums = [
       "/app/views/layouts/decidim/_logo.html.erb" => "2713715db652c8107f1fe5f2c4d618b6",
       # views
       "/app/views/decidim/account/show.html.erb" => "2e3c895104e03d7d092467a96f64703d",
-      "/app/views/decidim/devise/sessions/new.html.erb" => "1da8569a34bcd014ffb5323c96391837"
+      "/app/views/decidim/devise/sessions/new.html.erb" => "1da8569a34bcd014ffb5323c96391837",
+      # oauth
+      "/app/controllers/decidim/devise/omniauth_registrations_controller.rb" => "d4bc7f17cd84c53fcea17746f0f07c6c",
+      "/app/commands/decidim/create_omniauth_registration.rb" => "82b86ae7aa6a415383aad06cac80f1e9",
+      "/app/forms/decidim/omniauth_registration_form.rb" => "ee09e2b5675c9d1cb4dc955dded05393"
     }
   },
   {
