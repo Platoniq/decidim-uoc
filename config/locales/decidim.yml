@@ -2,11 +2,44 @@ ca:
   decidim:
     menu:
       assemblies: Direcció
+    omniauth:
+      uoc:
+        create:
+          affiliation_invalid: Necessites una afiliació diferent per a poder entrar
+    system:
+      organizations:
+        omniauth_settings:
+          uoc:
+            client_id: ID de client
+            client_secret: Secret de client
+            site_url: URL
 en:
   decidim:
     menu:
       assemblies: Management
+    omniauth:
+      uoc:
+        create:
+          affiliation_invalid: You need a different affiliation to sign in
+    system:
+      organizations:
+        omniauth_settings:
+          uoc:
+            client_id: Client ID
+            client_secret: Client secret
+            site_url: Site URL
 es:
   decidim:
     menu:
       assemblies: Dirección
+    omniauth:
+      uoc:
+        create:
+          affiliation_invalid: Necesitas una afiliación diferente para poder entrar 
+    system:
+      organizations:
+        omniauth_settings:
+          uoc:
+            client_id: ID de cliente
+            client_secret: Secreto de cliente
+            site_url: URL
