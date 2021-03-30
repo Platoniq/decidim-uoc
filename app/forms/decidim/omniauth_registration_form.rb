@@ -20,6 +20,8 @@ module Decidim
     validates :provider, presence: true
     validates :uid, presence: true
 
+    validate :uoc_affiliation_valid?
+
     def self.create_signature(provider, uid)
       Digest::MD5.hexdigest("#{provider}-#{uid}-#{Rails.application.secrets.secret_key_base}")
     end
@@ -35,7 +37,7 @@ module Decidim
     def uoc_affiliations
       return [] unless uoc?
 
-      raw_data.dig(:info, :affiliations)
+      raw_data.dig(:extra, :affiliations)
     end
 
     def uoc_affiliation_valid?
