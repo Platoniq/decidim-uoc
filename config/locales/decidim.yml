@@ -14,6 +14,8 @@ ca:
             client_secret: Secret de client
             site_url: URL
   devise:
+    omniauth_callbacks:
+      failure: No pots autenticar-te des de UOC perquè "%{reason}"
     shared:
       links:
         sign_in_with_provider: Iniciar sessió amb UOC
@@ -33,6 +35,8 @@ en:
             client_secret: Client secret
             site_url: Site URL
   devise:
+    omniauth_callbacks:
+      failure: You cannot authenticate with UOC because "%{reason}"
     shared:
       links:
         sign_in_with_provider: Sign in with UOC
@@ -52,6 +56,8 @@ es:
             client_secret: Secreto de cliente
             site_url: URL
   devise:
+    omniauth_callbacks:
+      failure: No puedes autenticarte desde UOC porque "%{reason}"
     shared:
       links:
         sign_in_with_provider: Iniciar sesión con UOC
