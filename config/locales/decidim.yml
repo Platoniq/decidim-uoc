@@ -5,7 +5,7 @@ ca:
     omniauth:
       uoc:
         create:
-          affiliation_invalid: Necessites una afiliació diferent per a poder entrar
+          affiliation_invalid: Per tal d'accedir a la plataforma necessites ser de l'equip propi de la Universitat
     system:
       organizations:
         omniauth_settings:
@@ -13,6 +13,10 @@ ca:
             client_id: ID de client
             client_secret: Secret de client
             site_url: URL
+  devise:
+    shared:
+      links:
+        sign_in_with_provider: Iniciar sessió amb UOC
 en:
   decidim:
     menu:
@@ -20,7 +24,7 @@ en:
     omniauth:
       uoc:
         create:
-          affiliation_invalid: You need a different affiliation to sign in
+          affiliation_invalid: To sign in to the platform you need to be part of the University staff
     system:
       organizations:
         omniauth_settings:
@@ -28,6 +32,10 @@ en:
             client_id: Client ID
             client_secret: Client secret
             site_url: Site URL
+  devise:
+    shared:
+      links:
+        sign_in_with_provider: Sign in with UOC
 es:
   decidim:
     menu:
@@ -35,7 +43,7 @@ es:
     omniauth:
       uoc:
         create:
-          affiliation_invalid: Necesitas una afiliación diferente para poder entrar 
+          affiliation_invalid: Para acceder a la plataforma necesitas ser del equipo propio de la Universidad
     system:
       organizations:
         omniauth_settings:
@@ -43,3 +51,7 @@ es:
             client_id: ID de cliente
             client_secret: Secreto de cliente
             site_url: URL
+  devise:
+    shared:
+      links:
+        sign_in_with_provider: Iniciar sesión con UOC

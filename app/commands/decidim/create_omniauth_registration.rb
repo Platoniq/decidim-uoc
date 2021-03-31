@@ -25,11 +25,9 @@ module Decidim
           user = existing_identity.user
           verify_user_confirmed(user)
 
-          if form.invalid?
-            return broadcast(:invalid)
-          else
-            return broadcast(:ok, user)
-          end
+          return broadcast(:invalid) if form.invalid?
+
+          return broadcast(:ok, user)
         end
 
         return broadcast(:invalid) if form.invalid?
