@@ -1,0 +1,23 @@
+---
+es:
+  decidim:
+    menu:
+      assemblies: Dirección
+    omniauth:
+      uoc:
+        create:
+          affiliation_invalid: Para acceder a la plataforma necesitas ser del equipo
+            propio de la Universidad
+    system:
+      organizations:
+        omniauth_settings:
+          uoc:
+            client_id: ID de cliente
+            client_secret: Secreto de cliente
+            site_url: URL
+  devise:
+    omniauth_callbacks:
+      failure: No puedes autenticarte desde UOC porque "%{reason}"
+    shared:
+      links:
+        sign_in_with_provider: Inicia sesión con UOC

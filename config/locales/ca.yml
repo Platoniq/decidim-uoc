@@ -1,0 +1,23 @@
+---
+ca:
+  decidim:
+    menu:
+      assemblies: Direcció
+    omniauth:
+      uoc:
+        create:
+          affiliation_invalid: Per tal d'accedir a la plataforma necessites ser de
+            l'equip propi de la Universitat
+    system:
+      organizations:
+        omniauth_settings:
+          uoc:
+            client_id: ID de client
+            client_secret: Secret de client
+            site_url: URL
+  devise:
+    omniauth_callbacks:
+      failure: No pots autenticar-te des de UOC perquè "%{reason}"
+    shared:
+      links:
+        sign_in_with_provider: Inicia sessió amb UOC
