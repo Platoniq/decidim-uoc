@@ -21,10 +21,15 @@ Rails.application.config.to_prepare do
 
       case scope_types_mode
       when :exclude
-        where("decidim_assemblies_type_id IS NULL OR decidim_assemblies_type_id NOT IN (?)", scope_types)
+        query = where("decidim_assemblies_type_id IS NULL OR decidim_assemblies_type_id NOT IN (?)", scope_types)
       when :include
-        where("decidim_assemblies_type_id IN (?)", scope_types)
+        work_groups_type_ids = AssembliesScoper.alternative_assembly_types.find { |t| t[:key] = "work_groups" }[:assembly_type_ids]
+
+        query = where("decidim_assemblies_type_id IN (?)", scope_types)
+        query = query.order(slug: :asc) if scope_types == work_groups_type_ids
       end
+
+      query
     end
   end
 end
