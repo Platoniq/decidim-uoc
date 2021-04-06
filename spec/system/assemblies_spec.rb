@@ -116,4 +116,49 @@ describe "Visit assemblies", type: :system do
       expect(page).to have_current_path decidim_assemblies.assembly_path(assembly.slug)
     end
   end
+
+  describe "work groups order" do
+    context "when visiting work_groups" do
+      let!(:assemblies) do
+        [
+          alternative_assembly,
+          create(:assembly, slug: "workgroup3", assembly_type: work_groups, organization: organization),
+          create(:assembly, slug: "workgroup1", assembly_type: work_groups, organization: organization),
+          create(:assembly, slug: "workgroup2", assembly_type: work_groups, organization: organization)
+        ]
+      end
+
+      before do
+        visit "/work_groups"
+      end
+
+      it "sorts assemblies by slug" do
+        assembly_links = page.find_all(".card__link").map { |a| a[:href] }
+        expect(assembly_links.count).to eq(4)
+        expect(assembly_links[0]).to match("slug1")
+        expect(assembly_links[1]).to match("workgroup1")
+        expect(assembly_links[2]).to match("workgroup2")
+        expect(assembly_links[3]).to match("workgroup3")
+      end
+    end
+
+    context "when visiting other assemblies" do
+      let!(:other_assemblies) do
+        [assembly, assembly2] + create_list(:assembly, 3, organization: organization)
+      end
+
+      before do
+        visit "/assemblies"
+      end
+
+      it "sorts assemblies by id" do
+        assembly_links = page.find_all(".card__link").map { |a| a[:href] }
+        expect(assembly_links.count).to eq(5)
+
+        assembly_links.each_with_index do |link, index|
+          expect(link).to match(other_assemblies[index].slug)
+        end
+      end
+    end
+  end
 end
