@@ -141,24 +141,5 @@ describe "Visit assemblies", type: :system do
         expect(assembly_links[3]).to match("workgroup3")
       end
     end
-
-    context "when visiting other assemblies" do
-      let!(:other_assemblies) do
-        [assembly, assembly2] + create_list(:assembly, 3, organization: organization)
-      end
-
-      before do
-        visit "/assemblies"
-      end
-
-      it "sorts assemblies by id" do
-        assembly_links = page.find_all(".card__link").map { |a| a[:href] }
-        expect(assembly_links.count).to eq(5)
-
-        assembly_links.each_with_index do |link, index|
-          expect(link).to match(other_assemblies[index].slug)
-        end
-      end
-    end
   end
 end

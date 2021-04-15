@@ -6,6 +6,8 @@ ca:
     alternative_login: Entra amb un altre compte
     alternative_assembly_types:
       work_groups: Grups de treball
+    footer:
+      tecnopolitica: Tecnopolítica
 en:
   uoc:
     account_callout: Some of these fields (*) are read from your UOC account, and cannot be edited here.
@@ -14,6 +16,8 @@ en:
     alternative_login: Enter with another account
     alternative_assembly_types:
       work_groups: Work groups
+    footer:
+      tecnopolitica: Tecnopolítica
 es:
   uoc:
     account_callout: Algunos de estos campos (*) se leen de tu cuenta UOC, y no se pueden editar aquí.
@@ -22,3 +26,5 @@ es:
     alternative_login: Entra con otra cuenta
     alternative_assembly_types:
       work_groups: Grupos de trabajo
+    footer:
+      tecnopolitica: Tecnopolítica
