@@ -25,7 +25,7 @@ Rails.application.config.to_prepare do
       when :include
         work_groups_type_ids = AssembliesScoper.alternative_assembly_types.find { |t| t[:key] = "work_groups" }[:assembly_type_ids]
 
-        query = where("decidim_assemblies_type_id IN (?)", scope_types)
+        query = where(decidim_assemblies_type_id: scope_types)
         query = query.order(slug: :asc) if scope_types == work_groups_type_ids
       end
 

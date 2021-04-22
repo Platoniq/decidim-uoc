@@ -44,12 +44,14 @@ module Decidim
         l(model.creation_date, format: :decidim_short) if model.creation_date
       end
 
+      # rubocop:disable Style/StringConcatenation
       def children_count_status
         content_tag(
           :strong,
           t("layouts.decidim.assemblies.index.children")
         ) + " " + children_assemblies_visible_for_user
       end
+      # rubocop:enable Style/StringConcatenation
 
       def children_assemblies_visible_for_user
         assemblies = model.children.published
