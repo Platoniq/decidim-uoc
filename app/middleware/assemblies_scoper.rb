@@ -18,6 +18,8 @@ class AssembliesScoper
     @app = app
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/PerceivedComplexity
   def call(env)
     @request = Rack::Request.new(env)
     return @app.call(env) unless @request.get? # only run middleware for GET requests
@@ -47,6 +49,8 @@ class AssembliesScoper
     end
     @app.call(env)
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/PerceivedComplexity
 
   private
 
@@ -68,7 +72,7 @@ class AssembliesScoper
   end
 
   def redirect(prefix)
-    [301, { "Location" => location(prefix), "Content-Type" => "text/html", "Content-Length" => "0" }, []]
+    [307, { "Location" => location(prefix), "Content-Type" => "text/html", "Content-Length" => "0" }, []]
   end
 
   def location(prefix)

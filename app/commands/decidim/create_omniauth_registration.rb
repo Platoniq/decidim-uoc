@@ -71,7 +71,7 @@ module Decidim
         @user.password_confirmation = generated_password
         @user.remote_avatar_url = form.avatar_url if form.avatar_url.present?
         @user.locale = form.raw_data.dig(:extra, :locale)
-        @user.uoc_oauth_data = form.raw_data.dig(:extra)
+        @user.uoc_oauth_data = form.raw_data[:extra]
         @user.skip_confirmation! if verified_email
       end
 
