@@ -12,36 +12,26 @@ describe AssembliesScoper do
   let!(:organization2) { create(:organization, host: "another.host.org") }
   let!(:alternative_type) { create(:assemblies_type, organization: organization) }
   let!(:normal_type) { create(:assemblies_type, organization: organization) }
-  let!(:external_assembly) { create(:assembly, slug: "external-slug1", organization: organization2) }
-  let!(:external_assembly2) { create(:assembly, slug: "slug2", organization: organization2) }
+  let!(:external_assembly) { create(:assembly, slug: "external-slug1", assembly_type: nil, organization: organization2) }
+  let!(:external_assembly2) { create(:assembly, slug: "slug2", assembly_type: nil, organization: organization2) }
   let!(:alternative_assembly) { create(:assembly, slug: "slug1", assembly_type: alternative_type, organization: organization) }
   let!(:assembly1) { create(:assembly, slug: "slug2", assembly_type: normal_type, organization: organization) }
   let!(:assembly2) { create(:assembly, slug: "slug3", assembly_type: nil, organization: organization) }
 
   let(:route) { "alternative_assemblies" }
-  let(:types) { [alternative_type.id] }
+  let(:type_id) { alternative_type.id }
   let(:alternative_assembly_types) do
     [
       {
         key: route,
-        assembly_type_ids: types
+        assembly_type_ids: [type_id]
       }
     ]
   end
 
-  before(:each) do
+  before do
     Decidim::Assembly.scope_to_types(nil, nil)
     allow(AssembliesScoper).to receive(:alternative_assembly_types).and_return(alternative_assembly_types)
-  end
-
-  after do
-    external_assembly.destroy
-    external_assembly2.destroy
-    alternative_assembly.destroy
-    assembly1.destroy
-    assembly2.destroy
-    alternative_type.destroy
-    normal_type.destroy
   end
 
   shared_examples "same environment" do
@@ -87,7 +77,7 @@ describe AssembliesScoper do
     it "assembly model is tampered with exclude types" do
       middleware.call(env)
 
-      expect(Decidim::Assembly.scope_types).to eq(types)
+      expect(Decidim::Assembly.scope_types).to eq([type_id])
       expect(Decidim::Assembly.scope_types_mode).to eq(:exclude)
     end
 
@@ -104,10 +94,9 @@ describe AssembliesScoper do
     it_behaves_like "same environment"
 
     it "assembly model is tampered with include types" do
-      
       middleware.call(env)
 
-      expect(Decidim::Assembly.scope_types).to eq(types)
+      expect(Decidim::Assembly.scope_types).to eq([type_id])
       expect(Decidim::Assembly.scope_types_mode).to eq(:include)
     end
 

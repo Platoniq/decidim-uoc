@@ -54,7 +54,7 @@ module Decidim
           super
         end
       end
-      
+
       # Calling the `stored_location_for` method removes the key, so in order
       # to check if there's any pending redirect after login I need to call
       # this method and use the value to set a pending redirect. This is the
