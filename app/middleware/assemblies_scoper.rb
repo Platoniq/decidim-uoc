@@ -72,7 +72,7 @@ class AssembliesScoper
   end
 
   def redirect(prefix)
-    [301, { "Location" => location(prefix), "Content-Type" => "text/html", "Content-Length" => "0" }, []]
+    [307, { "Location" => location(prefix), "Content-Type" => "text/html", "Content-Length" => "0" }, []]
   end
 
   def location(prefix)
