@@ -9,7 +9,7 @@ checksums = [
   {
     package: "decidim-admin",
     files: {
-      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "926acd42a72c91263042502bdf50b400"
+      "/app/views/decidim/admin/organization_appearance/form/_colors.html.erb" => "725fc77b4c80f885b7b4191a75a06949"
     }
   },
   {
@@ -23,7 +23,7 @@ checksums = [
       "/app/views/decidim/account/show.html.erb" => "2e3c895104e03d7d092467a96f64703d",
       "/app/views/decidim/devise/sessions/new.html.erb" => "1da8569a34bcd014ffb5323c96391837",
       # oauth
-      "/app/controllers/decidim/devise/omniauth_registrations_controller.rb" => "d4bc7f17cd84c53fcea17746f0f07c6c",
+      "/app/controllers/decidim/devise/omniauth_registrations_controller.rb" => "05bc35af4b5f855736f14efbd22e439b",
       "/app/commands/decidim/create_omniauth_registration.rb" => "82b86ae7aa6a415383aad06cac80f1e9",
       "/app/forms/decidim/omniauth_registration_form.rb" => "ee09e2b5675c9d1cb4dc955dded05393"
     }
@@ -32,12 +32,12 @@ checksums = [
     package: "decidim-assemblies",
     files: {
       # just to take into the account if some routes change
-      "/lib/decidim/assemblies/engine.rb" => "99a665d60c949c30a7f127c322dc3de5",
-      "/lib/decidim/assemblies/admin_engine.rb" => "15bfba31a46f70870da42a07b588e59d",
-      "/app/models/decidim/assembly.rb" => "b99256774db6151d5b0e47cacdbea550",
+      "/lib/decidim/assemblies/engine.rb" => "20d16ed292562a28198c5644426eb5d8",
+      "/lib/decidim/assemblies/admin_engine.rb" => "5cb65ce77bd8bb2508984faa7825326f",
+      "/app/models/decidim/assembly.rb" => "0d9726c3f40c320b02b31f59a70dbf02",
       "/app/views/decidim/assemblies/_filter_by_type.html.erb" => "76988d76b84d96079e6d9e1b252a3fda",
       "/app/views/decidim/assemblies/assemblies/_parent_assemblies.html.erb" => "fd026d4ee40dd1d5ebf8ad9ec5d0dbb4",
-      "/app/cells/decidim/assemblies/assembly_m_cell.rb" => "40b5a636a80b1da88bceb459d286f690"
+      "/app/cells/decidim/assemblies/assembly_m_cell.rb" => "701de343899341b472a84c03f2268092"
     }
   },
   {
