@@ -8,4 +8,16 @@ module ApplicationHelper
   def uoc_sign_in_enabled?
     Rails.application.secrets.omniauth.dig(:uoc, :enabled)
   end
+
+  def participatory_space_filters_form_url
+    if request.path.remove("/").in?(
+      [
+        *AssembliesScoper.alternative_assembly_types.map { |hash| hash[:key] }
+      ]
+    )
+      request.path
+    else
+      url_for
+    end
+  end
 end
